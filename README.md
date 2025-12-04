@@ -1,4 +1,4 @@
-# Brain Tumor Detection Using Hybrid Deep Learning Models with Explainable AI
+# Brain Tumor Detection using YOLOv10 & Hybrid CNN Models with Explainable AI
 
 A comprehensive deep learning project implementing hybrid architectures for accurate brain tumor detection and classification from MRI images, with explainable AI techniques for clinical interpretability.
 
@@ -121,23 +121,19 @@ LRP provides pixel-level attribution showing exact contributions to predictions:
 ## 📁 Project Structure
 
 ```
-Brain-Tumor-Detection/
-├── notebooks/
-│   ├── yolov10_detection.ipynb          # YOLOv10 object detection
-│   ├── vgg19_lstm_hybrid.ipynb          # Model 1: VGG19+LSTM
-│   ├── vgg16_inceptionv3_ensemble.ipynb # Model 2: VGG16+InceptionV3
-│   └── gradcam_visualization.ipynb      # Explainable AI
-├── models/
-│   ├── vgg19_lstm_best.h5
-│   ├── vgg16_inception_best.h5
-│   └── yolov10_tumor.pt
-├── data/
-│   ├── train/
-│   ├── validation/
-│   └── test/
-├── visualizations/
-│   └── gradcam_outputs/
-├── requirements.txt
+YOLOV10_TUMORDETECTION/
+├── .idea/
+├── Hybrid Models/
+│   ├── vgg16-inceptionv3-kfold.ipynb
+│   ├── vgg19-lstm-lrp.ipynb
+│   └── VGG19+LSTM.ipynb
+├── Yolo_Detection_Models/
+│   ├── yolo10x.ipynb
+│   ├── yolov10b.ipynb
+│   ├── yolov10l.ipynb
+│   ├── yolov10m.ipynb
+│   ├── yolov10n.ipynb
+│   └── yolov10s.ipynb
 └── README.md
 ```
 
@@ -156,52 +152,50 @@ CUDA 11.7+ (for GPU acceleration)
 
 ```bash
 # Clone the repository
-git clone https://github.com/07fahim/Brain-Tumor-detection-Hybrid-Model-with-XAI-.git
-cd Brain-Tumor-detection-Hybrid-Model-with-XAI-
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Requirements
-
-```txt
-tensorflow>=2.8.0
-keras>=2.8.0
-torch>=1.12.0
-torchvision>=0.13.0
-ultralytics>=8.0.0
-opencv-python>=4.5.0
-numpy>=1.21.0
-pandas>=1.3.0
-matplotlib>=3.4.0
-seaborn>=0.11.0
-scikit-learn>=1.0.0
-```
+git clone https://github.com/07fahim/Yolov10_TumorDetection.git
+cd Yolov10_TumorDetection
 
 ## 💻 Usage
 
-### Training Models
+### Training Hybrid Models
 
 **VGG19 + LSTM Hybrid:**
 ```bash
-jupyter notebook notebooks/vgg19_lstm_hybrid.ipynb
+jupyter notebook "Hybrid Models/VGG19+LSTM.ipynb"
 ```
 
-**VGG16 + InceptionV3 Ensemble:**
+**VGG19 + LSTM with LRP:**
 ```bash
-jupyter notebook notebooks/vgg16_inceptionv3_ensemble.ipynb
+jupyter notebook "Hybrid Models/vgg19-lstm-lrp.ipynb"
 ```
 
-**YOLOv10 Detection:**
+**VGG16 + InceptionV3 Ensemble with K-Fold:**
 ```bash
-jupyter notebook notebooks/yolov10_detection.ipynb
+jupyter notebook "Hybrid Models/vgg16-inceptionv3-kfold.ipynb"
 ```
 
-### Generating Grad-CAM Visualizations
+### Training YOLOv10 Detection Models
+
+All YOLOv10 variants are available:
 
 ```bash
-jupyter notebook notebooks/gradcam_visualization.ipynb
+# YOLOv10-Nano (Fastest)
+jupyter notebook "Yolo_Detection_Models/yolov10n.ipynb"
+
+# YOLOv10-Small
+jupyter notebook "Yolo_Detection_Models/yolov10s.ipynb"
+
+# YOLOv10-Medium
+jupyter notebook "Yolo_Detection_Models/yolov10m.ipynb"
+
+# YOLOv10-Large
+jupyter notebook "Yolo_Detection_Models/yolov10l.ipynb"
+
+# YOLOv10-Balanced
+jupyter notebook "Yolo_Detection_Models/yolov10b.ipynb"
+
+# YOLOv10-Extra Large
+jupyter notebook "Yolo_Detection_Models/yolo10x.ipynb"
 ```
 
 ## 📊 Results Summary
@@ -261,13 +255,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Research community for pre-trained models (VGG, InceptionV3)
 - Ultralytics for YOLOv10 implementation
 
-## 📚 References
-
-- VGG Networks: Simonyan & Zisserman (2014)
-- InceptionV3: Szegedy et al. (2015)
-- LSTM: Hochreiter & Schmidhuber (1997)
-- Grad-CAM: Selvaraju et al. (2017)
-- YOLOv10: Wang et al. (2024)
 
 ---
 
